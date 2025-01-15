@@ -13,7 +13,7 @@ keep-alive-interval: 15
 keep-alive-idle: 15
 ipv6: true
 disable-keep-alive: false
-find-process-mode: strict
+find-process-mode: always
 log-level: info
 unified-delay: true
 tcp-concurrent: true
@@ -129,14 +129,14 @@ proxy-providers:
       url: "https://sub.tgzdyz2.xyz/sub"
       health-check:
          enable: true
-         interval: 300
-         timeout: 5000
+         interval: 60
+         timeout: 30
          expected-status: 204
-         max-failed-times: 10
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: http
       proxy: DIRECT 
-      lazy: true
+      lazy: false
       interval: 3600
       override:
          skip-cert-verify: true
@@ -149,14 +149,14 @@ proxy-providers:
       url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml"
       health-check:
          enable: true
-         interval: 300
-         timeout: 5000
+         interval: 60
+         timeout: 30
          expected-status: 204
-         max-failed-times: 10
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: http
       proxy: DIRECT
-      lazy: true
+      lazy: false
       interval: 3600
       override:
          skip-cert-verify: true
@@ -169,14 +169,14 @@ proxy-providers:
       url: "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml"
       health-check:
          enable: true
-         interval: 300
-         timeout: 5000
+         interval: 60
+         timeout: 30
          expected-status: 204
-         max-failed-times: 10
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: http
       proxy: DIRECT
-      lazy: true
+      lazy: false
       interval: 3600
       override:
          skip-cert-verify: true
@@ -189,14 +189,14 @@ proxy-providers:
       url: "https://s.subcsub.com/Yobm51S"
       health-check:
          enable: true
-         interval: 300
-         timeout: 5000
+         interval: 60
+         timeout: 30
          expected-status: 204
-         max-failed-times: 10
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: http
       proxy: DIRECT
-      lazy: true
+      lazy: false
       interval: 3600
       override:
          skip-cert-verify: true
@@ -209,14 +209,14 @@ proxy-providers:
       url: "https://sub.htg8866.us.kg/sublink98765"
       health-check:
          enable: true
-         interval: 300
-         timeout: 5000
+         interval: 60
+         timeout: 30
          expected-status: 204
-         max-failed-times: 10
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: http
       proxy: DIRECT
-      lazy: true
+      lazy: false
       interval: 3600
       override:
          skip-cert-verify: true
@@ -229,14 +229,14 @@ proxy-providers:
       url: "https://super.jack991.filegear-sg.me/"
       health-check:
          enable: true
-         interval: 300
-         timeout: 5000
+         interval: 60
+         timeout: 30
          expected-status: 204
-         max-failed-times: 10
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: http
       proxy: DIRECT
-      lazy: true
+      lazy: false
       interval: 3600
       override:
          skip-cert-verify: true
@@ -249,13 +249,13 @@ proxy-providers:
       url: "https://subapi.fxxk.dedyn.io/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2FPawdroid%2FFree-servers%2Fmain%2Fstatic%2Fsub_en&target=clash&new_name=true&config=https%3A%2F%2Fraw.githubusercontent.com%2FMazeorz%2Fairports%2Fmaster%2FClash%2FStitch.ini&emoji=false&append_type=true&append_info=true&scv=false&udp=false&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
-         interval: 300
-         timeout: 5000
+         interval: 60
+         timeout: 30
          expected-status: 204
-         max-failed-times: 10
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: http
-      lazy: true
+      lazy: false
       proxy: DIRECT
       interval: 3600
       override:
@@ -269,14 +269,14 @@ proxy-providers:
       url: "https://subapi.fxxk.dedyn.io/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2FPawdroid%2FFree-servers%2Fmain%2Fsub%7Chttps%3A%2F%2Fraw.githubusercontent.com%2FPawdroid%2FFree-servers%2Fmain%2Fsub&target=clash&config=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSleepyHeeead%2Fsubconverter-config%40master%2Fremote-config%2Funiversal%2Furltest.ini&emoji=true&append_type=true&append_info=true&scv=false&udp=false&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
-         interval: 300
-         timeout: 5000
+         interval: 60
+         timeout: 30
          expected-status: 204
-         max-failed-times: 10
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: http
       proxy: DIRECT
-      lazy: true
+      lazy: false
       interval: 3600
       override:
          skip-cert-verify: true
@@ -289,14 +289,14 @@ proxy-providers:
       url: "https://subapi.fxxk.dedyn.io/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2Fsoroushmirzaei%2Ftelegram-configs-collector%2Frefs%2Fheads%2Fmain%2Fcountries%2Fsg%2Fmixed%7Chttps%3A%2F%2Fraw.githubusercontent.com%2Fsoroushmirzaei%2Ftelegram-configs-collector%2Fmain%2Fcountries%2Fsg%2Fmixed%7Chttps%3A%2F%2Fraw.githubusercontent.com%2Fsoroushmirzaei%2Ftelegram-configs-collector%2Frefs%2Fheads%2Fmain%2Fcountries%2Fhk%2Fmixed%7Chttps%3A%2F%2Fraw.githubusercontent.com%2Fsoroushmirzaei%2Ftelegram-configs-collector%2Fmain%2Fcountries%2Fhk%2Fmixed&target=clashr&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=true&sort=true&fdn=true&insert=true"
       health-check:
          enable: true
-         interval: 300
-         timeout: 5000
+         interval: 60
+         timeout: 30
          expected-status: 204
-         max-failed-times: 10
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: http
       proxy: DIRECT
-      lazy: true
+      lazy: false
       interval: 3600
       override:
          skip-cert-verify: true
@@ -309,14 +309,14 @@ proxy-providers:
       url: https://youxiu3102.xiaofeixia.click/api/v1/client/subscribe?token=f6e955c105f50fc834e6cd35e206df5d&flag=meta&type=all
       health-check:
          enable: true
-         interval: 300
-         timeout: 5000
+         interval: 60
+         timeout: 30
          expected-status: 204
-         max-failed-times: 10
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: http
       proxy: DIRECT
-      lazy: true
+      lazy: false
       interval: 3600
       override:
          skip-cert-verify: true
@@ -329,14 +329,14 @@ proxy-providers:
       url: https://aggregator.aoip.top/
       health-check:
          enable: true
-         interval: 300
-         timeout: 5000
+         interval: 60
+         timeout: 30
          expected-status: 204
-         max-failed-times: 10
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: http
       proxy: DIRECT
-      lazy: true
+      lazy: false
       interval: 3600
       override:
          skip-cert-verify: true
@@ -349,14 +349,14 @@ proxy-providers:
       url: https://gist.zmy666.us.kg/
       health-check:
          enable: true
-         interval: 300
-         timeout: 5000
+         interval: 60
+         timeout: 30
          expected-status: 204
-         max-failed-times: 10
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: http
       proxy: DIRECT
-      lazy: true
+      lazy: false
       interval: 3600
       override:
          skip-cert-verify: true
@@ -369,10 +369,10 @@ proxy-groups:
     - name: auto
       health-check:
          enable: true
-         interval: 300
-         timeout: 5000
+         interval: 60
+         timeout: 30
          expected-status: 204
-         max-failed-times: 10
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: url-test
       proxy: DIRECT
@@ -384,7 +384,10 @@ proxy-groups:
     - name: load-balance
       health-check:
          enable: true
-         interval: 300
+         interval: 60
+         timeout: 30
+         expected-status: 204
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: load-balance
       lazy: false
@@ -397,7 +400,10 @@ proxy-groups:
     - name: fallback
       health-check:
          enable: true
-         interval: 300
+         interval: 60
+         timeout: 30
+         expected-status: 204
+         max-failed-times: 5
          url: "https://cp.cloudflare.com/generate_204"
       type: fallback
       lazy: false
@@ -409,11 +415,13 @@ rule-providers:
     StevenBlack:
       type: http
       behavior: domain
+      interval: 86400
       url: "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts"
       path: ./profile/rules/StevenBlack.yaml
     AdGuardSDNSFilter_All:
       type: http
       behavior: domain
+      interval: 86400
       url: "https://raw.githubusercontent.com/Repcz/EgernRules/refs/heads/X/Rules/AdGuardSDNSFilter/AdGuardSDNSFilter_All.yaml"
       path: ./profile/rules/AdGuardSDNSFilter_All.yaml
 #    BanProgramAD:
@@ -424,60 +432,71 @@ rule-providers:
     EasyList:
       type: http
       behavior: domain
+      interval: 86400
       url: "https://raw.githubusercontent.com/easylist/easylist/refs/heads/master/easylist/easylist_adservers_popup.txt"
       path: ./profile/rules/EasyList.yaml
     Hagezi:
       type: http
       behavior: domain
+      interval: 86400
       url: "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/ultimate.txt"
       path: /profile/rules/Hagezi.yaml
     LoyalSoldier:
       type: http
       behavior: domain
+      interval: 86400
       url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/reject-list.txt"
       path: ./profile/rules/LoyalSoldier.yaml
     lancidr:
       type: http
       behavior: ipcidr
+      interval: 86400
       url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
       path: ./profile/rules/lancidr.yaml
     mm-cidr:
       type: http
       behavior: ipcidr
       format: yaml
+      interval: 86400
       url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/clash/ipcidr/mm.txt"
       path: ./ruleset/ipcidr/mm.yaml
     gfw:
       type: http
       behavior: domain
+      interval: 86400
       url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
       path: ./profile/rules/gfw.yaml
     oisd_big:
       type: http
       behavior: classical
+      interval: 86400
       url: "https://raw.githubusercontent.com/hillz2/openclash_adblock/main/oisd_big.yaml"
       path: ./profile/rules/oisd_big.yaml
     wildrift_ports:
       type: http
       behavior: classical
+      interval: 86400
       url: "https://raw.githubusercontent.com/hillz2/clashrules/refs/heads/main/rule_provider/Game_LeagueOfLegends_Ports.yaml"
       path: ./profile/rules/wildrift_ports.yaml
     Brave:
       type: http
       behavior: domain
       format: yaml
+      interval: 86400
       url: "https://raw.githubusercontent.com/brave/adblock-lists/master/brave-lists/brave-android-specific.txt"
       path: ./profile/rules/Brave.yaml
     Reiji_Adblock:
       type: http
       behavior: domain
       format: yaml
+      interval: 86400
       url: "https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Clash/main/adblock_reject.yaml"
       path: ./profile/rules/adblock_reject.yaml
     NoPopUp_GEO_Location:
       type: http
       behavior: domain
       format: yaml
+      interval: 86400
       url: "https://raw.githubusercontent.com/easylist/easylist/refs/heads/master/custom-lists/google_geolocation_popup.txt"
       path: ./profile/rules/NoPopUp_GEO_Location.yaml
     Telegramcidr:
