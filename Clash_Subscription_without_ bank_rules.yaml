@@ -2251,7 +2251,7 @@ rules:
     - RULE-SET,Telegramcidr,auto
     - GEOIP,Private,DIRECT,no-resolve
 #    - GEOSITE,category-games,auto
-    - GEOSITE,category-bank-mm,DIRECT
+#    - GEOSITE,category-bank-mm,DIRECT
     - GEOSITE,category-ads@ads,REJECT
     - DOMAIN,clash.razord.top,DIRECT,no-resolve
     - DOMAIN,yacd.haishan.me,DIRECT,no-resolve
