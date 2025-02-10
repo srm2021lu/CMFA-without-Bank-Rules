@@ -131,6 +131,26 @@ dns:
       - '+.youtube.com'
 proxies:
 proxy-providers:
+    Shadowsocks:
+      url: "https://subapi.fxxk.dedyn.io/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2Fdarknessm427%2FSub%2Fmain%2FV2ss%7Chttps%3A%2F%2Fraw.githubusercontent.com%2Fbarry-far%2FV2ray-Configs%2Fmain%2FSplitted-By-Protocol%2Fss.txt%7Chttps%3A%2F%2Fgithub.com%2FEpodonios%2Fv2ray-configs%2Fraw%2Fmain%2FSplitted-By-Protocol%2Fss.txt%7Chttps%3A%2F%2Fraw.githubusercontent.com%2FNiREvil%2Fvless%2Fmain%2Fsub%2FSSTime%7Chttps%3A%2F%2Fraw.githubusercontent.com%2Fsoroushmirzaei%2Ftelegram-configs-collector%2Frefs%2Fheads%2Fmain%2Fsubscribe%2Fprotocols%2Fshadowsocks%7Chttps%3A%2F%2Figdux.top%2F~21_%40ShadowProxy66&target=clashr&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=true&sort=true&fdn=true&insert=true"
+      health-check:
+         enable: true
+         interval: 150
+         timeout: 0
+         #expected-status: 204
+         #max-failed-times: 10
+         url: "https://clients3.google.com/generate_204"
+      type: http
+      proxy: DIRECT
+      lazy: false
+      interval: 3600
+      override:
+         skip-cert-verify: true
+      header:
+         User-Agent:
+              - "Clash/v1.18.0"
+              - "mihomo/1.18.3"
+      path: ./profile/proxy_providers/shadowsocks.yaml
     V2Node_SG:
       url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fsg%2F%3Fkey%378CDC2C9D566994&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
