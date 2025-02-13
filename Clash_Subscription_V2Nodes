@@ -1,4 +1,4 @@
-port: 7890
+cport: 7890
 socks-port: 7891
 redir-port: 7893
 tproxy-port: 7894
@@ -25,7 +25,7 @@ external-controller-cors:
 external-controller-tls: 127.0.0.1:9443
 external-ui: ui
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
-global-client-fingerprint: random
+global-client-fingerprint: chrome
 routing-mark: 6666
 interface-name: en0
 geodata-mode: true
@@ -88,7 +88,8 @@ dns:
       - 1.1.1.1
       - 8.8.8.8
       - 127.0.0.1
-    fake-ip-range: 198.18.0.1/16
+#    fake-ip-range: 198.18.0.1/16
+    fake-ip-range: 28.0.0.1/8
     search-domains: [local]
     fake-ip-filter:
       - '*.lan'
@@ -120,8 +121,8 @@ dns:
       - tcp://1.0.0.1
     geoip: true
     geoip-code: MM
-    geosite:
-      - gfw
+#    geosite:
+#      - gfw
     fallback-filter:
     ipcidr:
       - 240.0.0.0/4
