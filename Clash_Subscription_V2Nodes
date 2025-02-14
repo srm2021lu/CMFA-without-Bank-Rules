@@ -25,7 +25,7 @@ external-controller-cors:
 external-controller-tls: 127.0.0.1:9443
 external-ui: ui
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
-global-client-fingerprint: chrome
+global-client-fingerprint: random
 routing-mark: 6666
 interface-name: en0
 geodata-mode: true
@@ -121,8 +121,9 @@ dns:
       - tcp://1.0.0.1
     geoip: true
     geoip-code: MM
-#    geosite:
-#      - gfw
+    geosite:
+      - category-ads-all
+      - category-anticensorship
     fallback-filter:
     ipcidr:
       - 240.0.0.0/4
@@ -152,8 +153,8 @@ proxy-providers:
               - "Clash/v1.18.0"
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/shadowsocks.yaml
-    V2Node_SG:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fsg%2F%3Fkey%31BBA5DD8E416FEE&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+    V2Node:
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fall%2F%3Fkey%31BBA5DD8E416FEE&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -171,27 +172,87 @@ proxy-providers:
          User-Agent:
               - "Clash/v1.18.0"
               - "mihomo/1.18.3"
-      path: ./profile/proxy_providers/V2NODE_SG.yaml
-    V2Node_HK:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fhk%2F%3Fkey%31BBA5DD8E416FEE&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
-      health-check:
-         enable: true
-         interval: 150
-         timeout: 0
+      path: ./profile/proxy_providers/V2NODE.yaml
+#    V2Node_TH:
+#      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fth%2F%3Fkey%31BBA5DD8E416FEE&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+#      health-check:
+#         enable: true
+#         interval: 150
+ #        timeout: 0
          #expected-status: 204
          #max-failed-times: 10
-         url: "https://clients3.google.com/generate_204"
-      type: http
-      proxy: DIRECT
-      lazy: false
-      interval: 3600
-      override:
-         skip-cert-verify: true
-      header:
-         User-Agent:
-              - "Clash/v1.18.0"
-              - "mihomo/1.18.3"
-      path: ./profile/proxy_providers/V2NODE_HK.yaml
+#         url: "https://clients3.google.com/generate_204"
+#      type: http
+#      proxy: DIRECT
+#      lazy: false
+ #     interval: 3600
+ #     override:
+#         skip-cert-verify: true
+#      header:
+ #        User-Agent:
+ #             - "Clash/v1.18.0"
+  #            - "mihomo/1.18.3"
+#      path: ./profile/proxy_providers/V2NODE_TH.yaml
+#    V2Node_HK:
+ #     url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fhk%2F%3Fkey%31BBA5DD8E416FEE&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+#      health-check:
+#         enable: true
+ #        interval: 150
+#         timeout: 0
+         #expected-status: 204
+         #max-failed-times: 10
+#         url: "https://clients3.google.com/generate_204"
+#      type: http
+#      proxy: DIRECT
+#     lazy: false
+#      interval: 3600
+#      override:
+#         skip-cert-verify: true
+#      header:
+#         User-Agent:
+#              - "Clash/v1.18.0"
+#              - "mihomo/1.18.3"
+#      path: ./profile/proxy_providers/V2NODE_HK.yaml
+#    V2Node_MY:
+#      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fmy%2F%3Fkey%31BBA5DD8E416FEE&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+#      health-check:
+#        enable: true
+#         interval: 150
+#         timeout: 0
+         #expected-status: 204
+         #max-failed-times: 10
+#         url: "https://clients3.google.com/generate_204"
+#      type: http
+#      proxy: DIRECT
+#      lazy: false
+#      interval: 3600
+#      override:
+#         skip-cert-verify: true
+#      header:
+#         User-Agent:
+#             - "Clash/v1.18.0"
+#              - "mihomo/1.18.3"
+#      path: ./profile/proxy_providers/V2NODE_MY.yaml
+#    V2Node_ID:
+ #     url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fid%2F%3Fkey%31BBA5DD8E416FEE&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+#      health-check:
+#         enable: true
+#         interval: 150
+#         timeout: 0
+         #expected-status: 204
+         #max-failed-times: 10
+#         url: "https://clients3.google.com/generate_204"
+#      type: http
+#     proxy: DIRECT
+#      lazy: false
+#      interval: 3600
+#      override:
+#         skip-cert-verify: true
+#      header:
+#         User-Agent:
+#              - "Clash/v1.18.0"
+#              - "mihomo/1.18.3"
+#      path: ./profile/proxy_providers/V2NODE_ID.yaml
 proxy-groups:
     - name: auto
       health-check:
@@ -247,11 +308,11 @@ rule-providers:
       behavior: domain
       url: "https://raw.githubusercontent.com/Repcz/EgernRules/refs/heads/X/Rules/AdGuardSDNSFilter/AdGuardSDNSFilter_All.yaml"
       path: ./profile/rules/AdGuardSDNSFilter_All.yaml
-#    BanProgramAD:
-#      type: http
-#      behavior: domain
-#      url: "https://raw.githubusercontent.com/Repcz/ACL4SSR/refs/heads/X/Rules/BanProgramAD.list"
-#      path: ./profile/rules/BanProgramAD.yaml
+    BanProgramAD:
+      type: http
+      behavior: domain
+      url: "https://raw.githubusercontent.com/Repcz/ACL4SSR/refs/heads/X/Rules/BanProgramAD.list"
+      path: ./profile/rules/BanProgramAD.yaml
     EasyList:
       type: http
       behavior: domain
@@ -305,6 +366,12 @@ rule-providers:
       format: yaml
       url: "https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Clash/main/adblock_reject.yaml"
       path: ./profile/rules/adblock_reject.yaml
+    FB-Non-Graph:
+      type: http
+      behavior: domain
+      format: yaml
+      url: "https://gitlab.com/eyeo/anti-cv/abp-filters-anti-cv/-/blob/201548971c18e780f456141c987fb81ec00722e0/fb_non-graph.txt"
+      path: ./profile/rules/fb-non-graph.yaml
     NoPopUp_GEO_Location:
       type: http
       behavior: domain
@@ -343,6 +410,7 @@ rules:
     - RULE-SET,Brave,REJECT
 #    - RULE-SET,LAN,DIRECT
     - RULE-SET,ChatGPT,auto
+    - RULE-SET,BanProgramAD,REJECT
 #    - RULE-SET,lancidr,DIRECT
 #    - RULE-SET,mm-cidr,auto
     - RULE-SET,Reiji_Adblock,REJECT
@@ -365,6 +433,9 @@ rules:
     - DOMAIN-KEYWORD,388gaming,REJECT
     - GEOIP,MM,auto
     - GEOIP,facebook,auto
+    - GEOSITE,adblockplus,REJECT
+    - GEOSITE,segment-ads,REJECT
+    - GEOSITE,adjust-ads,REJECT
     - DOMAIN,geosite:category-ads-all,REJECT
     - DOMAIN,geosite:category-ads,REJECT
     - DOMAIN,geosite:category-ads-mm,REJECT
