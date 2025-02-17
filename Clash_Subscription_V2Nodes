@@ -26,8 +26,8 @@ external-controller-tls: 127.0.0.1:9443
 external-ui: ui
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 global-client-fingerprint: random
-routing-mark: 6666
-interface-name: en0
+#routing-mark: 6666
+#interface-name: en0
 geodata-mode: true
 geodata-loader: memconservative
 global-ua: clash.meta
@@ -37,13 +37,13 @@ profile:
     store-fake-ip: true
 geo-auto-update: true
 geo-update-interval: 24
-geox-url:
- #   geoip: "https://github.com/lyc8503/sing-box-rules/releases/latest/download/geoip.db”
-#    geosite: "https://github.com/lyc8503/sing-box-rules/releases/latest/download/geosite.db"
-    geoip: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
-    geosite: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
-    mmdb: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
-    asn: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb"
+#geox-url:
+#    geoip: "https://github.com/lyc8503/sing-box-rules/releases/latest/download/geoip.db”
+#   geosite: "https://github.com/lyc8503/sing-box-rules/releases/latest/download/geosite.db"
+#    geoip: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
+#    geosite: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
+#    mmdb: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
+#    asn: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb"
 hosts:
     '*.clash.dev': '127.0.0.1'
     '.dev': '127.0.0.1'
@@ -68,28 +68,68 @@ sniffer:
 tun:
     enable: true
     stack: mixed
-    dns-hijack:
-      - "any:53"
-      - "tcp://any:53"
     auto-route: true
     auto-redirect: true
     auto-detect-interface: true
+    dns-hijack:
+      - any:53
+      - tcp://any:53
+    device: utun0
+    mtu: 9000
+    strict-route: true
+    gso: true
+    gso-max-size: 65536
+    udp-timeout: 300
+    iproute2-table-index: 2022
+    iproute2-rule-index: 9000
+    endpoint-independent-nat: false
+#    route-address-set:
+#      - ruleset-1
+#    route-exclude-address-set:
+#      - ruleset-2
+    route-address:
+      - 0.0.0.0/1
+      - 128.0.0.0/1
+      - "::/1"
+      - "8000::/1"
+    route-exclude-address:
+      - 192.168.0.0/16
+      - fc00::/7
+    include-interface:
+      - eth0
+    exclude-interface:
+      - eth1
+    include-uid:
+      - 0
+    include-uid-range:
+      - 1000:9999
+    exclude-uid:
+      - 1000
+    exclude-uid-range:
+      - 1000:9999
+    include-android-user:
+      - 0
+      - 10
+    include-package:
+      - com.android.chrome
+      - com.riotgames.league.wildrift
+    exclude-package:
+      - com.android.captiveportallogin
 dns:
     enable: true
 #    listen: 0.0.0.0:53
     ipv6: true
     use-system-hosts: true
     respect-rules: false
-    enhanced-mode: redir-host
-#    fake-ip-filter-mode: blacklist
+    enhanced-mode: fake-ip
+    fake-ip-filter-mode: blacklist
     use-hosts: true
     prefer-h3: true
     default-nameserver:
       - 1.1.1.1
       - 8.8.8.8
       - 127.0.0.1
-#    fake-ip-range: 198.18.0.1/16
-    fake-ip-range: 28.0.0.1/8
+    fake-ip-range: 198.18.0.1/15
     search-domains: [local]
     fake-ip-filter:
       - '*.lan'
@@ -105,6 +145,12 @@ dns:
       - 1.1.1.1
       - 8.8.8.8
       - 127.0.0.1
+      - tls://dns.google
+      - https://1.1.1.1/dns-query
+      - https://8.8.8.8/dns-query
+      - quic://dns.adguard.com
+      - h3://8.8.8.8/dns-query
+      - rcode://success
       - https://dns64.dns.google/dns-query
       - dhcp://en0
 #    nameserver-policy:
@@ -119,12 +165,18 @@ dns:
       - https://9.9.9.9/dns-query
       - tcp://8.8.4.4
       - tcp://1.0.0.1
+      - tcp://8.8.8.8
+      - tcp://1.1.1.1
     geoip: true
     geoip-code: MM
-    geosite:
-      - category-ads-all
-      - category-anticensorship
+#    geosite:
+#      - gfw
     fallback-filter:
+         geoip: true
+         ipcidr:
+              - 240.0.0.0/4
+              - 0.0.0.0/32
+              - 127.0.0.1/32
     ipcidr:
       - 240.0.0.0/4
     domain:
@@ -133,8 +185,8 @@ dns:
       - '+.youtube.com'
 proxies:
 proxy-providers:
-    d7b12d59:
-      url: "https://d7b12d59-21aa-9561-087f-89c834ac7fe8.372372.xyz/api/v1/client/subscribe?token=87fd1239fa2282b2a01661ba42e28a87"
+    Pawdroid:
+      url: "https://url.v1.mk/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2FPawdroid%2FFree-servers%2Frefs%2Fheads%2Fmain%2Fsub&target=clash&config=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSleepyHeeead%2Fsubconverter-config%40master%2Fremote-config%2Funiversal%2Furltest.ini&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -143,8 +195,8 @@ proxy-providers:
          max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
-      proxy: DIRECT
       lazy: false
+#      proxy: DIRECT
       interval: 3600
       override:
          skip-cert-verify: true
@@ -152,7 +204,7 @@ proxy-providers:
          User-Agent:
               - "Clash/v1.18.0"
               - "mihomo/1.18.3"
-      path: ./profile/proxy_providers/d7b12d59.yaml
+      path: ./profile/proxy_providers/Pawdroid.yaml
     Shadowsocks:
       url: "https://subapi.fxxk.dedyn.io/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2Fdarknessm427%2FSub%2Fmain%2FV2ss%7Chttps%3A%2F%2Fraw.githubusercontent.com%2Fbarry-far%2FV2ray-Configs%2Fmain%2FSplitted-By-Protocol%2Fss.txt%7Chttps%3A%2F%2Fgithub.com%2FEpodonios%2Fv2ray-configs%2Fraw%2Fmain%2FSplitted-By-Protocol%2Fss.txt%7Chttps%3A%2F%2Fraw.githubusercontent.com%2FNiREvil%2Fvless%2Fmain%2Fsub%2FSSTime%7Chttps%3A%2F%2Fraw.githubusercontent.com%2Fsoroushmirzaei%2Ftelegram-configs-collector%2Frefs%2Fheads%2Fmain%2Fsubscribe%2Fprotocols%2Fshadowsocks%7Chttps%3A%2F%2Figdux.top%2F~21_%40ShadowProxy66&target=clashr&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=true&sort=true&fdn=true&insert=true"
       health-check:
@@ -174,7 +226,7 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/shadowsocks.yaml
     V2Node_HK:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fhk%2F%3Fkey%3F31ACBEC53A0CA6&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fhk%2F%3Fkey%32B31DEC3A8308DC&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -194,7 +246,7 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/V2NODE_HK.yaml
     V2Node_SG:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fsg%2F%3Fkey%3F31ACBEC53A0CA6&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fsg%2F%3Fkey%32B31DEC3A8308DC&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -214,7 +266,7 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/V2NODE_SG.yaml
     V2Node_TW:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Ftw%2F%3Fkey%3F31ACBEC53A0CA6&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Ftw%2F%3Fkey%32B31DEC3A8308DC&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -234,7 +286,7 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/V2NODE_TW.yaml
     V2Node_MY:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fmy%2F%3Fkey%3F31ACBEC53A0CA6&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fmy%2F%3Fkey%32B31DEC3A8308DC&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -254,7 +306,7 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/V2NODE_MY.yaml
     V2Node_ID:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fid%2F%3Fkey%3F31ACBEC53A0CA6&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fid%2F%3Fkey%32B31DEC3A8308DC&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -436,7 +488,7 @@ rules:
     - RULE-SET,Reiji_Adblock,REJECT
     - RULE-SET,Telegramcidr,auto
 #    - GEOIP,Private,DIRECT,no-resolve
-    - GEOSITE,category-ads@ads,REJECT
+    - DOMAIN,geosite:category-ads@ads,REJECT
     - DOMAIN,clash.razord.top,DIRECT,no-resolve
     - DOMAIN,yacd.haishan.me,DIRECT,no-resolve
 #    - GEOIP,LAN,DIRECT
@@ -453,9 +505,9 @@ rules:
     - DOMAIN-KEYWORD,388gaming,REJECT
     - GEOIP,MM,auto
     - GEOIP,facebook,auto
-    - GEOSITE,adblockplus,REJECT
-    - GEOSITE,segment-ads,REJECT
-    - GEOSITE,adjust-ads,REJECT
+    - DOMAIN,geosite:adblockplus,REJECT
+    - DOMAIN,geosite:segment-ads,REJECT
+    - DOMAIN,geosite:adjust-ads,REJECT
     - DOMAIN,geosite:category-ads-all,REJECT
     - DOMAIN,geosite:category-ads,REJECT
     - DOMAIN,geosite:category-ads-mm,REJECT
@@ -506,4 +558,4 @@ rules:
     - PROCESS-NAME,moe.nb4a,DIRECT
     - DOMAIN,ms.applvn.com:443,DIRECT,no-resolve
 #    - DOMAIN-SUFFIX,tgzdyz2.xyz,auto
-    - MATCH, auto
+    - MATCH,auto
