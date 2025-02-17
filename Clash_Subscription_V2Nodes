@@ -37,13 +37,15 @@ profile:
     store-fake-ip: true
 geo-auto-update: true
 geo-update-interval: 24
-#geox-url:
+geox-url:
+    geoip: "https://github.com/malikshi/sing-box-geo/releases/latest/download/geoip.db"
+    geosite: "https://github.com/malikshi/sing-box-geo/releases/latest/download/geosite.db"
 #    geoip: "https://github.com/lyc8503/sing-box-rules/releases/latest/download/geoip.db”
 #   geosite: "https://github.com/lyc8503/sing-box-rules/releases/latest/download/geosite.db"
 #    geoip: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
 #    geosite: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
-#    mmdb: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
-#    asn: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb"
+    mmdb: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
+    asn: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb"
 hosts:
     '*.clash.dev': '127.0.0.1'
     '.dev': '127.0.0.1'
@@ -169,8 +171,17 @@ dns:
       - tcp://1.1.1.1
     geoip: true
     geoip-code: MM
-#    geosite:
-#      - gfw
+    geosite:
+      - gfw
+      - oisd-full
+      - rule-ads
+      - rule-doh
+      - rule-gaming
+      - rule-streaming
+      - rule-playstore
+      - rule-ipcheck
+      - rule-videoconference
+      - rule-malicious
     fallback-filter:
          geoip: true
          ipcidr:
