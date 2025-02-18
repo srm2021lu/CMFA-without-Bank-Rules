@@ -195,6 +195,18 @@ dns:
       - '+.facebook.com'
       - '+.youtube.com'
 proxies:
+    - name: "sggs17"
+      type: ssh
+      server: sggs17.hostip.co
+      port: 442
+      username: fastssh.com-riko224
+      password: heinlu198y
+#      private-key: key
+#      private-key-passphrase:
+#      host-key:
+#  - "ssh-rsa AAAAB3NzaC1yc2EAA..."
+#      host-key-algorithms:
+#  - rsa
 proxy-providers:
     Pawdroid:
       url: "https://url.v1.mk/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2FPawdroid%2FFree-servers%2Frefs%2Fheads%2Fmain%2Fsub&target=clash&config=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSleepyHeeead%2Fsubconverter-config%40master%2Fremote-config%2Funiversal%2Furltest.ini&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
@@ -237,7 +249,7 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/shadowsocks.yaml
     V2Node_HK:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fhk%2F%3Fkey%32B31DEC3A8308DC&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fhk%2F%3Fkey%397E0AAE2DFC3E27&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -257,7 +269,7 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/V2NODE_HK.yaml
     V2Node_SG:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fsg%2F%3Fkey%32B31DEC3A8308DC&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fsg%2F%3Fkey%397E0AAE2DFC3E27&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -277,7 +289,7 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/V2NODE_SG.yaml
     V2Node_TW:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Ftw%2F%3Fkey%32B31DEC3A8308DC&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Ftw%2F%3Fkey%397E0AAE2DFC3E27&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -297,7 +309,7 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/V2NODE_TW.yaml
     V2Node_MY:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fmy%2F%3Fkey%32B31DEC3A8308DC&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fmy%2F%3Fkey%397E0AAE2DFC3E27&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -317,7 +329,7 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/V2NODE_MY.yaml
     V2Node_ID:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fid%2F%3Fkey%32B31DEC3A8308DC&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fid%2F%3Fkey%397E0AAE2DFC3E27&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -346,7 +358,7 @@ proxy-groups:
          #max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: url-test
-      proxy: url-test
+      proxy: sggs17
       exclude-type: direct
 #      size-limit: 0
       lazy: false
