@@ -76,7 +76,7 @@ tun:
     dns-hijack:
       - any:53
       - tcp://any:53
-    device: utun0
+#    device: utun0
     mtu: 9000
     strict-route: true
     gso: true
@@ -209,13 +209,14 @@ proxies:
 #  - rsa
 proxy-providers:
     Pawdroid:
+      method: GET
       url: "https://url.v1.mk/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2FPawdroid%2FFree-servers%2Frefs%2Fheads%2Fmain%2Fsub&target=clash&config=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSleepyHeeead%2Fsubconverter-config%40master%2Fremote-config%2Funiversal%2Furltest.ini&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
          timeout: 0
          #expected-status: 204
-         max-failed-times: 10
+#         max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
       lazy: false
@@ -228,7 +229,9 @@ proxy-providers:
               - "Clash/v1.18.0"
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/Pawdroid.yaml
+#      icon: : "/storage/emulated/0/Download/2034218881650100127-128.png"
     Shadowsocks:
+      method: GET
       url: "https://subapi.fxxk.dedyn.io/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2Fdarknessm427%2FSub%2Fmain%2FV2ss%7Chttps%3A%2F%2Fraw.githubusercontent.com%2Fbarry-far%2FV2ray-Configs%2Fmain%2FSplitted-By-Protocol%2Fss.txt%7Chttps%3A%2F%2Fgithub.com%2FEpodonios%2Fv2ray-configs%2Fraw%2Fmain%2FSplitted-By-Protocol%2Fss.txt%7Chttps%3A%2F%2Fraw.githubusercontent.com%2FNiREvil%2Fvless%2Fmain%2Fsub%2FSSTime%7Chttps%3A%2F%2Fraw.githubusercontent.com%2Fsoroushmirzaei%2Ftelegram-configs-collector%2Frefs%2Fheads%2Fmain%2Fsubscribe%2Fprotocols%2Fshadowsocks%7Chttps%3A%2F%2Figdux.top%2F~21_%40ShadowProxy66&target=clashr&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=true&sort=true&fdn=true&insert=true"
       health-check:
          enable: true
@@ -238,7 +241,7 @@ proxy-providers:
          max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
-      proxy: DIRECT
+#      proxy: DIRECT
       lazy: false
       interval: 3600
       override:
@@ -249,7 +252,8 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/shadowsocks.yaml
     V2Node_HK:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fhk%2F%3Fkey%397E0AAE2DFC3E27&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      method: GET
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fhk%2F%3Fkey%32803F0DF992D20D&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -258,7 +262,7 @@ proxy-providers:
          max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
-      proxy: DIRECT
+#      proxy: DIRECT
       lazy: false
       interval: 3600
       override:
@@ -269,7 +273,8 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/V2NODE_HK.yaml
     V2Node_SG:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fsg%2F%3Fkey%397E0AAE2DFC3E27&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      method: GET
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fsg%2F%3Fkey%32803F0DF992D20D&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -278,7 +283,7 @@ proxy-providers:
          max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
-      proxy: DIRECT
+#      proxy: DIRECT
       lazy: false
       interval: 3600
       override:
@@ -289,7 +294,8 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/V2NODE_SG.yaml
     V2Node_TW:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Ftw%2F%3Fkey%397E0AAE2DFC3E27&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      method: GET
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Ftw%2F%3Fkey%32803F0DF992D20D&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -298,7 +304,7 @@ proxy-providers:
          max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
-      proxy: DIRECT
+#      proxy: DIRECT
       lazy: false
       interval: 3600
       override:
@@ -309,7 +315,8 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/V2NODE_TW.yaml
     V2Node_MY:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fmy%2F%3Fkey%397E0AAE2DFC3E27&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      method: GET
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fmy%2F%3Fkey%32803F0DF992D20D&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -318,7 +325,7 @@ proxy-providers:
          max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
-      proxy: DIRECT
+#      proxy: DIRECT
       lazy: false
       interval: 3600
       override:
@@ -329,7 +336,8 @@ proxy-providers:
               - "mihomo/1.18.3"
       path: ./profile/proxy_providers/V2NODE_MY.yaml
     V2Node_ID:
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fid%2F%3Fkey%397E0AAE2DFC3E27&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      method: GET
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fid%2F%3Fkey%32803F0DF992D20D&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          interval: 150
@@ -338,7 +346,7 @@ proxy-providers:
          max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
-      proxy: DIRECT
+#      proxy: DIRECT
       lazy: false
       interval: 3600
       override:
@@ -358,14 +366,22 @@ proxy-groups:
          #max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: url-test
-      proxy: sggs17
+      proxy: 
+         - sggs17
+#         - Pawdroid
+#         - V2Node_ID
+ #        - V2Node_HK
+#         - V2Node_SG
+  #       - V2Node_MY
+#         - V2Node_TW
+#         - Shadowsocks
       exclude-type: direct
 #      size-limit: 0
       lazy: false
       include-all: true
 #      filter: "{hk|hongkong|[hong kong]|[Hong Kong]|HK|SG|Singapore|新加坡|香港}"
  #     exclude-type: DIRECT
-#      icon: "https://cdn-icons-png.flaticon.com/512/3686/3686513.png"
+      icon: "https://cdn-icons-png.flaticon.com/512/3686/3686513.png"
     - name: load-balance
       health-check:
          enable: true
