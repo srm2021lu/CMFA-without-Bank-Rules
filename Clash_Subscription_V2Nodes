@@ -208,6 +208,49 @@ proxies:
 #      host-key-algorithms:
 #  - rsa
 proxy-providers:
+    Barry-Far-SS:
+      method: GET
+      url: "https://url.v1.mk/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2Fbarry-far%2FV2ray-Configs%2Frefs%2Fheads%2Fmain%2FSplitted-By-Protocol%2Fss.txt&target=clash&config=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSleepyHeeead%2Fsubconverter-config%40master%2Fremote-config%2Funiversal%2Furltest.ini&emoji=false&append_type=true&append_info=false&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false
+"
+      health-check:
+         enable: true
+         interval: 150
+         timeout: 0
+         #expected-status: 204
+#         max-failed-times: 10
+         url: "https://clients3.google.com/generate_204"
+      type: http
+      lazy: false
+#      proxy: DIRECT
+      interval: 3600
+      override:
+         skip-cert-verify: true
+      header:
+         User-Agent:
+              - "Clash/v1.18.0"
+              - "mihomo/1.18.3"
+      path: ./profile/proxy_providers/Barry-Far-SS.yaml   
+    Coldwater:
+      method: GET
+      url: "https://url.v1.mk/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2Fcoldwater-10%2FV2ray-Config%2Fmain%2FSplitted-By-Protocol%2Fss.txt&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      health-check:
+         enable: true
+         interval: 150
+         timeout: 0
+         #expected-status: 204
+#         max-failed-times: 10
+         url: "https://clients3.google.com/generate_204"
+      type: http
+      lazy: false
+#      proxy: DIRECT
+      interval: 3600
+      override:
+         skip-cert-verify: true
+      header:
+         User-Agent:
+              - "Clash/v1.18.0"
+              - "mihomo/1.18.3"
+      path: ./profile/proxy_providers/coldwater.yaml
     Pawdroid:
       method: GET
       url: "https://url.v1.mk/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2FPawdroid%2FFree-servers%2Frefs%2Fheads%2Fmain%2Fsub&target=clash&config=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSleepyHeeead%2Fsubconverter-config%40master%2Fremote-config%2Funiversal%2Furltest.ini&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
