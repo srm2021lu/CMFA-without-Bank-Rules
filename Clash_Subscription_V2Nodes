@@ -230,28 +230,28 @@ proxies:
 #      host-key-algorithms:
 #  - rsa
 proxy-providers:
-    SurfboardV2Ray:
-      method: GET
-      url: "https://url.v1.mk/sub?&url=https%253A%252F%252Fgithub.com%252FSurfboardv2ray%252FTGParse%252Fraw%252Frefs%252Fheads%252Fmain%252Fconfigtg.txt&target=clash&config=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSleepyHeeead%2Fsubconverter-config%40master%2Fremote-config%2Funiversal%2Furltest.ini&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
-      health-check:
-         enable: true
-         method: GET
-         interval: 150
-         timeout: 0
-         expected-status: 204
+#    SurfboardV2Ray:
+#      method: GET
+#      url: "https://url.v1.mk/sub?&url=https%253A%252F%252Fgithub.com%252FSurfboardv2ray%252FTGParse%252Fraw%252Frefs%252Fheads%252Fmain%252Fconfigtg.txt&target=clash&config=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSleepyHeeead%2Fsubconverter-config%40master%2Fremote-config%2Funiversal%2Furltest.ini&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+#      health-check:
+#         enable: true
+#        method: GET
+#        interval: 150
+#         timeout: 0
+#         expected-status: 204
 #         max-failed-times: 10
-         url: "https://clients3.google.com/generate_204"
-      type: http
-      lazy: false
+#         url: "https://clients3.google.com/generate_204"
+#      type: http
+#      lazy: false
 #      proxy: DIRECT
-      interval: 3600
-      override:
-         skip-cert-verify: true
-      header:
-         User-Agent:
-              - "Clash/v1.18.0"
-              - "mihomo/1.18.3"
-      path: ./profile/proxy_providers/SurfboardV2Ray.yaml   
+#      interval: 3600
+#     override:
+#         skip-cert-verify: true
+#      header:
+#         User-Agent:
+#              - "Clash/v1.18.0"
+#              - "mihomo/1.18.3"
+#      path: ./profile/proxy_providers/SurfboardV2Ray.yaml   
     Barry-Far-SS:
       method: GET
       url: "https://url.v1.mk/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2Fbarry-far%2FV2ray-Configs%2Frefs%2Fheads%2Fmain%2FSplitted-By-Protocol%2Fss.txt&target=clash&config=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSleepyHeeead%2Fsubconverter-config%40master%2Fremote-config%2Funiversal%2Furltest.ini&emoji=false&append_type=true&append_info=false&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false
@@ -344,7 +344,7 @@ proxy-providers:
       path: ./profile/proxy_providers/shadowsocks.yaml
     V2Node_HK:
       method: GET
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fhk%2F%3Fkey%349630E09F91EAD7&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fhk%2F%3Fkey%367B1C7719F8F3F3&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          method: GET
          enable: true
@@ -366,7 +366,7 @@ proxy-providers:
       path: ./profile/proxy_providers/V2NODE_HK.yaml
     V2Node_SG:
       method: GET
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fsg%2F%3Fkey%349630E09F91EAD7&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fsg%2F%3Fkey%367B1C7719F8F3F3&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
          method: GET
@@ -388,7 +388,7 @@ proxy-providers:
       path: ./profile/proxy_providers/V2NODE_SG.yaml
     V2Node_TW:
       method: GET
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Ftw%2F%3Fkey%349630E09F91EAD7&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Ftw%2F%3Fkey%367B1C7719F8F3F3&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          method: GET
          enable: true
@@ -410,7 +410,7 @@ proxy-providers:
       path: ./profile/proxy_providers/V2NODE_TW.yaml
     V2Node_MY:
       method: GET
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fmy%2F%3Fkey%349630E09F91EAD7&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fmy%2F%3Fkey%367B1C7719F8F3F3&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          method: GET
          enable: true
@@ -432,7 +432,7 @@ proxy-providers:
       path: ./profile/proxy_providers/V2NODE_MY.yaml
     V2Node_ID:
       method: GET
-      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fid%2F%3Fkey%349630E09F91EAD7&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fid%2F%3Fkey%367B1C7719F8F3F3&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          method: GET
          enable: true
@@ -695,6 +695,7 @@ rules:
     - PROCESS-NAME,ai.chat.gpt.bot,auto,no-resolve
     - PROCESS-NAME,com.rezone.gvortex,DIRECT,no-resolve
     - IP-SUFFIX,8.8.8.8/24,auto
+    - DOMAIN,drive.google.com,DIRECT
     - DOMAIN,sdk-api-v1.singular.net:443,auto,no-resolve
     - PROCESS-NAME,moe.nb4a,DIRECT
     - DOMAIN,ms.applvn.com:443,DIRECT,no-resolve
