@@ -230,6 +230,28 @@ proxies:
 #      host-key-algorithms:
 #  - rsa
 proxy-providers:
+    SurfboardV2Ray:
+      method: GET
+      url: "https://url.v1.mk/sub?&url=https%253A%252F%252Fgithub.com%252FSurfboardv2ray%252FTGParse%252Fraw%252Frefs%252Fheads%252Fmain%252Fconfigtg.txt&target=clash&config=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSleepyHeeead%2Fsubconverter-config%40master%2Fremote-config%2Funiversal%2Furltest.ini&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
+      health-check:
+         enable: true
+         method: GET
+         interval: 150
+         timeout: 0
+         expected-status: 204
+#         max-failed-times: 10
+         url: "https://clients3.google.com/generate_204"
+      type: http
+      lazy: false
+#      proxy: DIRECT
+      interval: 3600
+      override:
+         skip-cert-verify: true
+      header:
+         User-Agent:
+              - "Clash/v1.18.0"
+              - "mihomo/1.18.3"
+      path: ./profile/proxy_providers/SurfboardV2Ray.yaml   
     Barry-Far-SS:
       method: GET
       url: "https://url.v1.mk/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2Fbarry-far%2FV2ray-Configs%2Frefs%2Fheads%2Fmain%2FSplitted-By-Protocol%2Fss.txt&target=clash&config=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSleepyHeeead%2Fsubconverter-config%40master%2Fremote-config%2Funiversal%2Furltest.ini&emoji=false&append_type=true&append_info=false&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false
