@@ -5,8 +5,8 @@ tproxy-port: 7894
 mixed-port: 7892
 allow-lan: true
 #experimental:
-quic-go-disable-gso: false
-quic-go-disable-ecn: false
+#    - quic-go-disable-gso: false
+#    - quic-go-disable-ecn: false
 lan-allowed-ips:
     - 0.0.0.0/0
     - ::/0
@@ -14,7 +14,7 @@ lan-allowed-ips:
 #    - 192.168.0.3/32
 bind-address: "*"
 #ntp:
-#    - enable: true
+#enable: true
 #    - write-to-system: true
 #    - server: time.apple.com
 #    - port: 123
@@ -29,17 +29,16 @@ log-level: info
 unified-delay: true
 tcp-concurrent: true
 external-controller: 127.0.0.1:9090
-external-controller-cors:
-    allow-origins:
-      - '*'
-    allow-private-network: true
+#external-controller-cors:
+#    allow-origins: '*'
+#    allow-private-network: true
 external-controller-tls: 127.0.0.1:9443
 external-controller-unix: mihomo.sock
 external-ui: ui
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 global-client-fingerprint: random
-#routing-mark: 6666
-#interface-name: en0
+routing-mark: 6666
+interface-name: en0
 geodata-mode: true
 geodata-loader: memconservative
 global-ua: clash.meta
@@ -88,7 +87,7 @@ tun:
     dns-hijack:
       - any:53
       - tcp://any:53
-#    device: utun0
+    device: utun0
     mtu: 9000
     strict-route: true
     gso: true
@@ -129,16 +128,16 @@ tun:
 #      - com.riotgames.league.wildrift
     exclude-package:
       - com.android.captiveportallogin
-#listeners:
-#    - name: redir-in
-#      type: redir
-#      port: 7893
-#      listen: 0.0.0.0
-#    - name: tproxy-in
-#      type: tproxy
-#      port: 7894
-#      listen: 0.0.0.0
-#      udp: true
+listeners:
+    - name: redir-in
+      type: redir
+      port: 7893
+      listen: 0.0.0.0
+    - name: tproxy-in
+      type: tproxy
+      port: 7894
+      listen: 0.0.0.0
+      udp: true
 dns:
     enable: true
     listen: 0.0.0.0:53
@@ -154,7 +153,7 @@ dns:
       - 8.8.8.8
       - 127.0.0.1
     fake-ip-range: 198.18.0.1/15
-#    search-domains: [local]
+    search-domains: [local]
     fake-ip-filter:
       - '*.lan'
       - '*.riotgames.com'
@@ -237,9 +236,10 @@ proxy-providers:
 "
       health-check:
          enable: true
+         method: GET
          interval: 150
          timeout: 0
-         #expected-status: 204
+         expected-status: 204
 #         max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
@@ -258,9 +258,10 @@ proxy-providers:
       url: "https://url.v1.mk/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2Fcoldwater-10%2FV2ray-Config%2Fmain%2FSplitted-By-Protocol%2Fss.txt&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
+         method: GET
          interval: 150
          timeout: 0
-         #expected-status: 204
+         expected-status: 204
 #         max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
@@ -278,10 +279,11 @@ proxy-providers:
       method: GET
       url: "https://url.v1.mk/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2FPawdroid%2FFree-servers%2Frefs%2Fheads%2Fmain%2Fsub&target=clash&config=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSleepyHeeead%2Fsubconverter-config%40master%2Fremote-config%2Funiversal%2Furltest.ini&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
+         method: GET
          enable: true
          interval: 150
          timeout: 0
-         #expected-status: 204
+         expected-status: 204
 #         max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
@@ -301,9 +303,10 @@ proxy-providers:
       url: "https://subapi.fxxk.dedyn.io/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2Fdarknessm427%2FSub%2Fmain%2FV2ss%7Chttps%3A%2F%2Fraw.githubusercontent.com%2Fbarry-far%2FV2ray-Configs%2Fmain%2FSplitted-By-Protocol%2Fss.txt%7Chttps%3A%2F%2Fgithub.com%2FEpodonios%2Fv2ray-configs%2Fraw%2Fmain%2FSplitted-By-Protocol%2Fss.txt%7Chttps%3A%2F%2Fraw.githubusercontent.com%2FNiREvil%2Fvless%2Fmain%2Fsub%2FSSTime%7Chttps%3A%2F%2Fraw.githubusercontent.com%2Fsoroushmirzaei%2Ftelegram-configs-collector%2Frefs%2Fheads%2Fmain%2Fsubscribe%2Fprotocols%2Fshadowsocks%7Chttps%3A%2F%2Figdux.top%2F~21_%40ShadowProxy66&target=clashr&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=true&sort=true&fdn=true&insert=true"
       health-check:
          enable: true
+         method: GET
          interval: 150
          timeout: 0
-         #expected-status: 204
+         expected-status: 204
          max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
@@ -321,10 +324,11 @@ proxy-providers:
       method: GET
       url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fhk%2F%3Fkey%349630E09F91EAD7&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
+         method: GET
          enable: true
          interval: 150
          timeout: 0
-         #expected-status: 204
+         expected-status: 204
          max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
@@ -343,9 +347,10 @@ proxy-providers:
       url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fsg%2F%3Fkey%349630E09F91EAD7&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
          enable: true
+         method: GET
          interval: 150
          timeout: 0
-         #expected-status: 204
+         expected-status: 204
          max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
@@ -363,10 +368,11 @@ proxy-providers:
       method: GET
       url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Ftw%2F%3Fkey%349630E09F91EAD7&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
+         method: GET
          enable: true
          interval: 150
          timeout: 0
-         #expected-status: 204
+         expected-status: 204
          max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
@@ -384,10 +390,11 @@ proxy-providers:
       method: GET
       url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fmy%2F%3Fkey%349630E09F91EAD7&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
+         method: GET
          enable: true
          interval: 150
          timeout: 0
-         #expected-status: 204
+         expected-status: 204
          max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
@@ -405,10 +412,11 @@ proxy-providers:
       method: GET
       url: "https://sub.d1.mk/sub?&url=https%3A%2F%2Fwww.v2nodes.com%2Fsubscriptions%2Fcountry%2Fid%2F%3Fkey%349630E09F91EAD7&target=clash&emoji=false&append_type=true&append_info=true&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false"
       health-check:
+         method: GET
          enable: true
          interval: 150
          timeout: 0
-         #expected-status: 204
+         expected-status: 204
          max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
@@ -426,9 +434,10 @@ proxy-groups:
     - name: auto
       health-check:
          enable: true
+         method: GET
          interval: 150
          timeout: 0
-#       expected-status: 204
+         expected-status: 204
          #max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: url-test
@@ -442,7 +451,7 @@ proxy-groups:
 #         - V2Node_TW
 #         - Shadowsocks
       exclude-type: direct
-#      size-limit: 0
+      size-limit: 0
       lazy: false
       include-all: true
 #      filter: "{hk|hongkong|[hong kong]|[Hong Kong]|HK|SG|Singapore|新加坡|香港}"
@@ -450,6 +459,7 @@ proxy-groups:
       icon: "https://cdn-icons-png.flaticon.com/512/3686/3686513.png"
     - name: load-balance
       health-check:
+         method: GET
          enable: true
          interval: 150
          url: "https://clients3.google.com/generate_204"
@@ -465,6 +475,7 @@ proxy-groups:
     - name: fallback
       exclude-type: DIRECT
       health-check:
+         method: GET
          enable: true
          interval: 150
          url: "https://clients3.google.com/generate_204"
