@@ -1,7 +1,7 @@
 cport: 7890
 socks-port: 7891
-redir-port: 7893
-tproxy-port: 7894
+#redir-port: 7893
+#tproxy-port: 7894
 mixed-port: 7892
 allow-lan: true
 #experimental:
@@ -10,8 +10,8 @@ allow-lan: true
 lan-allowed-ips:
     - 0.0.0.0/0
     - ::/0
-#lan-disallowed-ips:
-#    - 192.168.0.3/32
+lan-disallowed-ips:
+    - 192.168.0.3/32
 bind-address: "*"
 #ntp:
 #enable: true
@@ -78,6 +78,9 @@ sniffer:
       - '*.riotgames.com'
       - '*.leagueoflegends.com'
       - '*.singular.net'
+      - '*.wildrift.riotgames.com'
+      - '*.log.wildrift.riotgames.com'
+      - '*.update.wildrift.riotgames.com'
 tun:
     enable: true
     stack: mixed
@@ -128,19 +131,9 @@ tun:
 #      - com.riotgames.league.wildrift
     exclude-package:
       - com.android.captiveportallogin
-listeners:
-    - name: redir-in
-      type: redir
-      port: 7893
-      listen: 0.0.0.0
-    - name: tproxy-in
-      type: tproxy
-      port: 7894
-      listen: 0.0.0.0
-      udp: true
 dns:
     enable: true
-    listen: 0.0.0.0:53
+#    listen: 0.0.0.0:53
     ipv6: true
     use-system-hosts: true
     respect-rules: false
@@ -184,11 +177,11 @@ dns:
 #        - https://doh.google/dns-query
 #         - https://dns.google/dns-query
     fallback:
-      - https://8.8.8.8/dns-query
+#      - https://8.8.8.8/dns-query
       - https://1.1.1.1/dns-query
-      - https://9.9.9.9/dns-query
-      - tls://8.8.4.4
-      - tls://1.1.1.1
+#      - https://9.9.9.9/dns-query
+#     - tls://8.8.4.4
+#      - tls://1.1.1.1
 #    proxy-server-nameserver:
 #      - https://dns.google/dns-query
     geoip: true
@@ -236,7 +229,7 @@ proxy-providers:
       health-check:
          enable: true
          method: GET
-         interval: 150
+         interval: 120
          timeout: 0
          expected-status: 204
 #         max-failed-times: 10
@@ -259,7 +252,7 @@ proxy-providers:
       health-check:
          enable: true
          method: GET
-         interval: 150
+         interval: 120
          timeout: 0
          expected-status: 204
 #         max-failed-times: 10
@@ -281,7 +274,7 @@ proxy-providers:
       health-check:
          enable: true
          method: GET
-         interval: 150
+         interval: 120
          timeout: 0
          expected-status: 204
 #         max-failed-times: 10
@@ -303,7 +296,7 @@ proxy-providers:
       health-check:
          method: GET
          enable: true
-         interval: 150
+         interval: 120
          timeout: 0
          expected-status: 204
 #         max-failed-times: 10
@@ -326,7 +319,7 @@ proxy-providers:
       health-check:
          enable: true
          method: GET
-         interval: 150
+         interval: 120
          timeout: 0
          expected-status: 204
          max-failed-times: 10
@@ -348,10 +341,10 @@ proxy-providers:
       health-check:
          method: GET
          enable: true
-         interval: 150
+         interval: 120
          timeout: 0
          expected-status: 204
-         max-failed-times: 10
+ #        max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
 #      proxy: DIRECT
@@ -370,10 +363,10 @@ proxy-providers:
       health-check:
          enable: true
          method: GET
-         interval: 150
+         interval: 120
          timeout: 0
          expected-status: 204
-         max-failed-times: 10
+#         max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
 #      proxy: DIRECT
@@ -392,10 +385,10 @@ proxy-providers:
       health-check:
          method: GET
          enable: true
-         interval: 150
+         interval: 120
          timeout: 0
          expected-status: 204
-         max-failed-times: 10
+#         max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
 #      proxy: DIRECT
@@ -414,10 +407,10 @@ proxy-providers:
       health-check:
          method: GET
          enable: true
-         interval: 150
+         interval: 120
          timeout: 0
          expected-status: 204
-         max-failed-times: 10
+#         max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
 #      proxy: DIRECT
@@ -436,10 +429,10 @@ proxy-providers:
       health-check:
          method: GET
          enable: true
-         interval: 150
+         interval: 120
          timeout: 0
          expected-status: 204
-         max-failed-times: 10
+ #        max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
 #      proxy: DIRECT
@@ -457,14 +450,15 @@ proxy-groups:
       health-check:
          enable: true
          method: GET
-         interval: 150
+         interval: 120
          timeout: 0
          expected-status: 204
          #max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: url-test
-      proxy: 
+      proxies: 
          - sggs17
+         - DIRECT
 #         - Pawdroid
 #         - V2Node_ID
  #        - V2Node_HK
@@ -472,26 +466,27 @@ proxy-groups:
   #       - V2Node_MY
 #         - V2Node_TW
 #         - Shadowsocks
-      exclude-type: direct
+      icon: "💯"
+      exclude-type: DIRECT
       size-limit: 0
       lazy: false
       include-all: true
 #      filter: "{hk|hongkong|[hong kong]|[Hong Kong]|HK|SG|Singapore|新加坡|香港}"
  #     exclude-type: DIRECT
-      icon: "https://cdn-icons-png.flaticon.com/512/3686/3686513.png"
+      
     - name: load-balance
       health-check:
          method: GET
          enable: true
-         interval: 150
+         interval: 120
          url: "https://clients3.google.com/generate_204"
       type: load-balance
-      lazy: false
+      lazy: true
       strategy: consistent-hashing
-#      include-all: false
-      include-all-proxies: true
+ #     include-all: false
+#      include-all-proxies: true
       include-all-providers: true
- #     filter: "{hk|hongkong|[hong kong]|[Hong Kong]|HK|SG|Singapore|新加坡|香港}"
+      filter: "{hk|hongkong|[hong kong]|[Hong Kong]|HK|SG|Singapore|新加坡|香港}"
 #      filter: "{hk|hongkong|[hong kong]|[Hong Kong]|HK|SG|Singapore}"
       exclude-type: DIRECT
     - name: fallback
@@ -499,14 +494,14 @@ proxy-groups:
       health-check:
          method: GET
          enable: true
-         interval: 150
+         interval: 120
          url: "https://clients3.google.com/generate_204"
       type: fallback
-      lazy: false
-      include-all: false
-      include-all-proxies: true
+      lazy: true
+#      include-all: false
+#      include-all-proxies: true
       include-all-providers: true
-  #    filter: "{hk|hongkong|[hong kong]|[Hong Kong]|HK|SG|Singapore}"
+      filter: "{hk|hongkong|[hong kong]|[Hong Kong]|HK|SG|Singapore}"
 rule-providers:
     StevenBlack:
       type: http
@@ -608,10 +603,10 @@ rule-providers:
 #      interval: 86400
 rules:
     - DOMAIN-SUFFIX,google.com,auto
-    - DOMAIN-SUFFIX,pvp.net,auto,no-resolve
-    - DOMAIN-SUFFIX,riotcdn.net,auto,no-resolve
-    - DOMAIN-SUFFIX,riotgames.com,auto,no-resolve
-    - DOMAIN-SUFFIX,leagueoflegends.com,auto,no-resolve
+    - DOMAIN-SUFFIX,pvp.net,auto
+    - DOMAIN-SUFFIX,riotcdn.net,auto
+    - DOMAIN-SUFFIX,riotgames.com,auto
+    - DOMAIN-SUFFIX,leagueoflegends.com,auto
     - RULE-SET,StevenBlack,REJECT
     - RULE-SET,LoyalSoldier,REJECT
     - RULE-SET,oisd_big,REJECT
@@ -649,12 +644,13 @@ rules:
     - DOMAIN,geosite:segment-ads,REJECT
     - DOMAIN,geosite:adjust-ads,REJECT
     - DOMAIN,geosite:category-ads-all,REJECT
+    - DOMAIN,geosite:category-gaming,auto
     - DOMAIN,geosite:category-ads,REJECT
     - DOMAIN,geosite:category-ads-mm,REJECT
     - DOMAIN,geosite:xiaomi-ads,REJECT
     - DOMAIN,geosite:facebook-ads,REJECT
     - DOMAIN,geosite:youtube,auto,no-resolve
-    - DOMAIN,geosite:wildrift,auto,no-resolve
+    - DOMAIN,geosite:wildrift,auto
     - DOMAIN,geosite:samsung,auto,no-resolve
     - DOMAIN,geosite:unity-ads,REJECT
     - DOMAIN,geosite:meta-ads,REJECT
@@ -662,15 +658,15 @@ rules:
     - DOMAIN,geoip:facebook-ads,REJECT
     - DOMAIN,geosite:category-public-tracker,REJECT
     - DOMAIN-KEYWORD,googleadservices,REJECT
-    - PROCESS-NAME,com.riotgames.league.wildrift,auto,no-resolve
+    - PROCESS-NAME,com.riotgames.league.wildrift,auto
     - PROCESS-NAME,com.sec.android.app.sbrowser,auto
     - PROCESS-NAME,sia.internet.apps.samsing.com,auto
-    - PROCESS-NAME,mm.com.mptvas,auto,no-resolve
+    - PROCESS-NAME,mm.com.mptvas,auto
     - PROCESS-NAME,moe.nb4a,DIRECT
-    - PROCESS-NAME,com.company.myanmarbroadbandtelecom,auto,no-resolve
+    - PROCESS-NAME,com.company.myanmarbroadbandtelecom,auto
     - PROCESS-NAME,com.termux,auto
-    - PROCESS-NAME,com.kbzbank.kpaycustomer,auto,no-resolve
-    - PROCESS-NAME,com.company.myanmarbroadbandtelecom,auto,no-resolve
+    - PROCESS-NAME,com.kbzbank.kpaycustomer,auto
+    - PROCESS-NAME,com.company.myanmarbroadbandtelecom,auto
     - DOMAIN-SUFFIX,googleads.g.doubleclick.nes,REJECT
     - DOMAIN-SUFFIX,adsense.google.com,REJECT
     - DOMAIN-SUFFIX,adservice.google.com,REJECT
@@ -692,12 +688,12 @@ rules:
     - DOMAIN-SUFFIX,samsung.com,auto
     - DOMAIN-SUFFIX,partner.uc.cn,REJECT
     - DOMAIN-SUFFIX,strpst.com,REJECT
-    - PROCESS-NAME,ai.chat.gpt.bot,auto,no-resolve
+    - PROCESS-NAME,ai.chat.gpt.bot,auto
     - PROCESS-NAME,com.rezone.gvortex,DIRECT,no-resolve
     - IP-SUFFIX,8.8.8.8/24,auto
     - DOMAIN,drive.google.com,DIRECT
     - DOMAIN,sdk-api-v1.singular.net:443,auto,no-resolve
-    - PROCESS-NAME,moe.nb4a,DIRECT
+    - PROCESS-NAME,moe.nb4a,DIRECT,no-resolve
     - DOMAIN,ms.applvn.com:443,DIRECT,no-resolve
 #    - DOMAIN-SUFFIX,tgzdyz2.xyz,auto
     - MATCH,auto
