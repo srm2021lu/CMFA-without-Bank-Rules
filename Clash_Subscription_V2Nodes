@@ -210,18 +210,12 @@ dns:
       - '+.facebook.com'
       - '+.youtube.com'
 proxies:
-    - name: "sggs17"
+    - name: "sggs25"
       type: ssh
       server: sggs25.hostip.co
       port: 442
       username: fastssh.com-riko530
       password: heinlu198y
-#      private-key: key
-#      private-key-passphrase:
-#      host-key:
-#  - "ssh-rsa AAAAB3NzaC1yc2EAA..."
-#      host-key-algorithms:
-#  - rsa
 proxy-providers:
     Soroushmirzaei:
       method: GET
@@ -457,7 +451,7 @@ proxy-groups:
          url: "https://clients3.google.com/generate_204"
       type: url-test
       proxies: 
-         - sggs17
+         - sggs25
          - DIRECT
 #         - Pawdroid
 #         - V2Node_ID
