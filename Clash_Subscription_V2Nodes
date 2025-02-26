@@ -189,6 +189,7 @@ proxy-providers:
          interval: 60
          timeout: 0
          expected-status: 204
+#         max-failed-times: 10
          url: "https://clients3.google.com/generate_204"
       type: http
       lazy: false
@@ -200,7 +201,7 @@ proxy-providers:
          User-Agent:
               - "Clash/v1.18.0"
               - "mihomo/1.18.3"
-      path: ./profile/proxy_providers/soroushmirzaei.yaml   
+      path: ./profile/proxy_providers/soroushmirzaei.yaml
     Barry-Far-SS:
       method: GET
       url: "https://url.v1.mk/sub?&url=https%3A%2F%2Fraw.githubusercontent.com%2Fbarry-far%2FV2ray-Configs%2Frefs%2Fheads%2Fmain%2FSplitted-By-Protocol%2Fss.txt&target=clash&config=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSleepyHeeead%2Fsubconverter-config%40master%2Fremote-config%2Funiversal%2Furltest.ini&emoji=false&append_type=true&append_info=false&scv=true&udp=true&list=false&sort=false&fdn=true&insert=false
@@ -341,14 +342,6 @@ proxy-groups:
       type: url-test
       proxies: 
          - sggs25
-         - DIRECT
-         - Soroushmirzaei
-         - Barry-Far-SS
-         - Coldwater
-         - Shadowsocks
-         - Pawdroid
-         - V2Node_HK
-         - V2Node_SG
       icon: "💯"
       exclude-type: DIRECT
       size-limit: 0
@@ -494,18 +487,13 @@ rules:
     - RULE-SET,Hagezi,REJECT
     - RULE-SET,EasyList,REJECT
     - RULE-SET,Brave,REJECT
-#    - RULE-SET,LAN,DIRECT
     - RULE-SET,ChatGPT,auto
     - RULE-SET,BanProgramAD,REJECT
-#    - RULE-SET,lancidr,DIRECT
-#    - RULE-SET,mm-cidr,auto
     - RULE-SET,Reiji_Adblock,REJECT
     - RULE-SET,Telegramcidr,auto
-#    - GEOIP,Private,DIRECT,no-resolve
     - DOMAIN,geosite:category-ads@ads,REJECT
     - DOMAIN,clash.razord.top,DIRECT,no-resolve
     - DOMAIN,yacd.haishan.me,DIRECT,no-resolve
-#    - GEOIP,LAN,DIRECT
     - RULE-SET,NoPopUp_GEO_Location,REJECT
     - RULE-SET,wildrift_ports, DIRECT,no-resolve
     - DOMAIN-KEYWORD,google,auto
